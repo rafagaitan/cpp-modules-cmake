@@ -9,13 +9,14 @@ namespace lib1
 export class Logger
 {
 public:
-    void log(const char* str) const;
+    template<typename T, typename ...Args>
+    void log(T&& arg1, Args&& ...args) const
+    {
+        std::cout << arg1;
+        ((std::cout << " " << args), ...);
+        std::cout << std::endl;
+    }
 };
-
-void Logger::log(const char* str) const
-{
-    std::cout << str << std::endl;
-}
 }
 
 
