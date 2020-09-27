@@ -1,6 +1,6 @@
 module;
 
-import <cstdio>;
+import <iostream>;
 
 export module Logger;
 
@@ -14,7 +14,7 @@ public:
 
 void Logger::log(const char* str) const
 {
-    std::printf("%s\n", str);
+    std::cout << str << std::endl;
 }
 }
 
